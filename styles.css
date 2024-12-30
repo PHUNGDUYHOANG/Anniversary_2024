@@ -1,0 +1,217 @@
+
+body {
+    display: flex; /* Sử dụng flexbox để quản lý bố cục */
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+    background: linear-gradient(to left bottom, rgb(249, 168, 212), rgb(216, 180, 254), rgb(129, 140, 248));
+    margin: 0; /* Bỏ khoảng cách mặc định của trình duyệt */
+    font-family: 'Source Code Pro', monospace; /* Chọn font chữ cho văn bản */
+}
+
+
+h1 {
+    font-family: "Dancing Script";
+    font-size: 25px; /* Kích thước chữ cho tiêu đề */
+    color: whitesmoke; /* Màu chữ cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    text-align: center; /* Căn giữa tiêu đề */
+    text-shadow: 3px 6px 12px #c7a1c7;
+}
+
+#thang1{
+    background-image: url(h2/thang1.jpg);
+    background-size: cover; /* Đảm bảo hình ảnh luôn nằm trong ô */
+    background-position: center; /* Căn giữa hình ảnh */
+    background-repeat: no-repeat; /* Ngăn không cho hình ảnh lặp lại */
+    
+}
+#thang2{
+    background-image: url(h2/thang2.jpg);
+    background-size: cover; /* Đảm bảo hình ảnh luôn nằm trong ô */
+    background-position: center; /* Căn giữa hình ảnh */
+    background-repeat: no-repeat; /* Ngăn không cho hình ảnh lặp lại */
+}
+#thang3{
+    background-image: url(h2/thang3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang4{
+    background-image: url(h2/thang4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang5{
+    background-image: url(h2/thang5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang6{
+    background-image: url(h2/thang6.png);
+    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;
+}
+#thang7{
+    background-image: url(h2/thang7.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang8{
+    background-image: url(h2/thang8.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang9{
+    background-image: url(h2/thang9.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang10{
+    background-image: url(h2/thang10.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang11{
+    background-image: url(h2/thang11.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#thang12{
+    background-image: url(h2/thang12.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.album-container {
+    display: grid; /* Sử dụng grid để tạo bố cục lưới */
+    grid-template-columns: repeat(2, 1fr); /* Tạo các cột tự động với chiều rộng tối thiểu 120px */
+    gap: 30px; /* Khoảng cách giữa các ô trong lưới */
+    overflow-x: hidden; /* Ngăn cuộn ngang */   
+}
+.box-mini {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    justify-content: flex-start; /* Căn giữa các phần tử lên trên cùng */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    width: 100%; /* Chiều rộng của mỗi ô album */
+    height: 150px; /* Chiều cao của mỗi ô album */
+    border: 2px solid #cb68c3; /* Đường viền cho ô album */
+    font-size: 18px; /* Kích thước chữ */
+    font-family: "Dancing Script";
+    color: whitesmoke;
+    text-shadow: 2px 4px 8px #cac9ca; /* Đổ bóng cho chữ */
+    text-align: center; /* Căn giữa văn bản trong ô album */
+    padding-top: 10px; /* Cách biên trên cùng 5px */
+    padding-left: 10px; /* Khoảng cách bên trái */
+    padding-right: 10px; /* Khoảng cách bên phải */
+    padding-bottom: 10px;
+    box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
+    box-shadow: 0 4px 6px rgba(238, 232, 232, 0.1); /* Đổ bóng cho ô album */
+    border-radius: 10px; /* Bo góc cho ô album */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua ô album */
+    transition: transform 0.2s; /* Thêm hiệu ứng chuyển tiếp */
+}
+.box-mini:hover {
+    transform: scale(1.05); /* Tăng kích thước một chút khi di chuột qua */
+}
+/* phần chứa các ảnh */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed; /* Đặt modal ở vị trí cố định */
+    z-index: 1; /* Đảm bảo modal nằm trên tất cả các phần tử khác */
+    left: 0; /* Căn trái modal */
+    top: 0; /* Căn trên modal */
+    width: 100%; /* Chiều rộng modal chiếm toàn bộ màn hình */
+    height: 100%; /* Chiều cao modal chiếm toàn bộ màn hình */
+    overflow: auto; /* Thêm thanh cuộn nếu nội dung vượt quá chiều cao */
+    background: linear-gradient(to top, rgba(222, 215, 163, 0.677), rgba(167, 142, 156, 0.726), rgba(233, 125, 181, 0.775)); /* Màu nền với độ trong suốt cho modal */
+    justify-content: center; /* Căn giữa nội dung modal theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung modal theo chiều dọc */
+}
+
+.modal-content {
+    display: flex; /* Sử dụng flex để căn giữa nội dung */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    padding: 20px; /* Khoảng cách bên trong cho nội dung modal */
+    max-height: 80vh; /* Chiều cao tối đa cho modal */
+    overflow-y: auto; /* Thêm thanh cuộn theo chiều dọc */
+    width: 90%; /* Chiều rộng của modal */
+    margin: auto; /* Căn giữa modal trên màn hình */
+}
+
+
+.image-container {
+    display: flex; /* Biến phần tử thành một container linh hoạt */
+    flex-direction: column; /* Sắp xếp các phần tử con theo cột */
+    align-items: center; /* Căn giữa các phần tử con theo chiều ngang */
+    margin-bottom: 10px; /* Tạo khoảng cách 10px ở dưới phần tử */
+    width: 50%; /* Chiều rộng của mỗi hình ảnh chiếm toàn bộ chiều rộng của modal */
+}
+
+.image-container img {
+    max-width: 90%; /* Thiết lập chiều rộng của hình ảnh thành 300 pixel */
+    height: auto; /* Căn giữa hình ảnh theo chiều ngang */
+    border-radius: 10px; /* Bo góc cho hình ảnh */
+   
+}
+
+.image-title {
+    background: rgba(243, 240, 240, 0.671); /* Màu nền cho tiêu đề với độ trong suốt */
+    color: black; /* Màu chữ cho tiêu đề */
+    padding: 10px; /* Khoảng cách bên trong cho tiêu đề */
+    border-radius: 10px; /* Bo góc cho tiêu đề */
+    text-align: center; /* Căn giữa tiêu đề */
+    width: 90%; /* Chiều rộng của tiêu đề */
+    box-sizing: border-box; /* Tính toán chiều rộng bao gồm padding và border */
+    overflow-wrap: break-word; /* Ngắt từ nếu cần thiết khi tiêu đề quá dài */
+    white-space: normal; /* Cho phép ngắt dòng tự động */
+    font-size: 14px; /* Kích thước chữ cho tiêu đề */
+    margin-top: 5px; /* Khoảng cách trên cho tiêu đề */
+    margin-bottom: 20px;
+    word-wrap: break-word; /* Ngắt từ nếu cần thiết */
+}
+
+.close {
+    position: absolute; /* Đặt vị trí của nút đóng ở vị trí tuyệt đối */
+    top: 20px; /* Cách từ trên xuống 20px */
+    right: 30px; /* Cách từ phải vào 30px */
+    color: white; /* Màu chữ cho nút đóng */
+    font-size: 24px; /* Kích thước chữ cho nút đóng */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua nút đóng */
+    background-color: rgba(228, 83, 209, 0.7); /* Màu nền với độ trong suốt */
+    border: none; /* Không có đường viền */
+    border-radius: 50%; /* Bo tròn cho nút */
+    width: 35px; /* Chiều rộng của nút */
+    height: 35px; /* Chiều cao của nút */
+    display: flex; /* Hiển thị Flex để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+.close:hover {
+    background-color: rgb(216, 175, 219); /* Đổi màu khi di chuột qua */
+    transform: scale(1.1); /* Tăng kích thước khi di chuột qua */
+}
+
+
+@media (max-width: 414px) {
+    .image-container {
+        width: 100%; /* Chiều rộng của các phần tử hình ảnh chiếm toàn bộ chiều rộng trong màn hình nhỏ hơn 768px */
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr; /* Chỉ một cột cho nội dung modal trên màn hình nhỏ hơn 768px */
+        max-width: 100%;
+    }
+}
